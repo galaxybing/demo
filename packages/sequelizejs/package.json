@@ -1,6 +1,6 @@
 {
   "name": "sequelizejs-doc",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Test sequelizejs",
   "main": "index.js",
   "scripts": {
