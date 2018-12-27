@@ -15,6 +15,8 @@ const sequelize = new Sequelize(`mysql://fe:${passwd}@172.16.150.246:3306/rap2_d
 */
 
 const db = new Sequelize({
+  host: '172.16.150.246',
+  port: 3306,
   dialect: 'mysql',
   operatorsAliases: true, // 是否识别字段别名中的下划线
   database: 'rap2_delos_app_local',
@@ -38,30 +40,29 @@ const db = new Sequelize({
   timezone: '+08:00', // 大陆时区设置
   // modelPaths: [__dirname + '/models']
 });
+// db.addModels([Animal, Dog, Bird]);
+db.addModels([path.resolve(__dirname, `./models/`)]);
 
-// db.addModels([Animal, Dog, Bird])
-
-/*
 (async () => {
   try {
+    /*
     const animalList = await Animal.getList()
     const dogList = await Dog.getList<Dog>()
 
     console.log(animalList)
     console.log(dogList)
+    */
 
     // [ts] 类型“Animal”上不存在属性“leg”。
     // console.log(dogList[0].leg)
 
-    // Animal.create<Animal>({
-    //   name: 'Niko',
-    //   weight: 19,
-    // })
+    const animal = Animal.create<Animal>({
+      name: 'Monkey',
+      weight: 19,
+    });
 
     process.exit(0)
   } catch (e) {
     console.error(e)
   }
 })()
-
-*/

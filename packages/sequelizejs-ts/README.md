@@ -1,4 +1,4 @@
-# 来源 - 2018年10月06日 - https://blog.csdn.net/w178191520/article/details/82954091
+参考来源 - 2018年10月06日 - https://blog.csdn.net/w178191520/article/details/82954091
 
 **Sequelize-typescript是基于Sequelize针对TypeScript所实现的一个增强版本，抛弃了之前繁琐的模型定义，使用装饰器直接达到我们想到的目的。**
 - 基于Sequelizejs
