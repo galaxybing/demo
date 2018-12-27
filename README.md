@@ -8,7 +8,7 @@ $ cd ./packages/ && mkdir * && cd sequelizejs && npm init # 新建子项目目�
 $ cd ../../
 $ lerna bootstrap
 
-# 提交项目代码
+# 提交项目代码到 npm 仓库
 $ lerna publish
 ```
 
