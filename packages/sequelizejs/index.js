@@ -27,18 +27,19 @@ sequelize.authenticate().then(async () => {
   /* 在模型关系配置好了以后，才执行下面的映射操作： */
 
   /* 删除,清理数据库 */
-  const DemoModelDeleted = sequelize.define('test_create_demo_index', {
-    memberId: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-      unique: true
-    },
-  });
-  await DemoModelDeleted.drop()
+  // const DemoModelDeleted = sequelize.define('test_create_demo_index', {
+  //   memberId: {
+  //     type: Sequelize.INTEGER,
+  //     allowNull: false,
+  //     unique: true
+  //   },
+  // });
+  // await DemoModelDeleted.drop()
   // await DemoModelDeleted.sync({force: true})
 
+
   /* 执行演示模块 */
-  // await require('./hasMany')(sequelize)
+  await require('./hasMany')(sequelize)
 
   process.exit(0)
 })
