@@ -56,14 +56,14 @@ mysql> exit;
 ## 文档 - http://docs.sequelizejs.com/
 
 - 官方源码 - https://github.com/sequelize/sequelize/blob/master/lib/query-types.js
-  - 中文文档 [sequalize-docs-Zh-CN](https://github.com/demopark/sequelize-docs-Zh-CN)，主要是对照文档目录的示例讲解
+  - 核心方法 - http://docs.sequelizejs.com/identifiers
+    * sequelize.import - http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-method-import
+    * `public static create 模型的方法` - http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-create
+  - [sequalize-docs-Zh-CN](https://github.com/demopark/sequelize-docs-Zh-CN)，主要是对照文档目录的示例讲解
     - Associations - 关联 - https://github.com/demopark/sequelize-docs-Zh-CN/blob/master/associations.md
       * a.belongsTo(b) 外键bId
       * c.hasMany(a) 外键cId
       * Sequelize 中文API文档－3. 模型（表）之间的关系/关联 - 2016-05-22 - https://itbilu.com/nodejs/npm/41qaV3czb.html
-  - 核心方法
-    * sequelize.import - http://docs.sequelizejs.com/class/lib/sequelize.js~Sequelize.html#instance-method-import
-    * `public static create 模型的方法` - http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-create
 
 - sequelize-typescript
   * Decorators and some other features for sequelize (v3, v4, v5). - https://www.npmjs.com/package/sequelize-typescript
@@ -71,7 +71,6 @@ mysql> exit;
     - 基于Sequelize针对TypeScript所实现的一个增强版本,抛弃了之前繁琐的模型定义,使用装饰器直接达到我们想到的目的
 
 - [github仓库组](https://github.com/sequelize)
-
 
 ## 参考资料：
 
