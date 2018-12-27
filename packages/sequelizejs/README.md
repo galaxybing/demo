@@ -12,9 +12,28 @@ issue:
   $ cd /apps/demo/sequelizejs
   $ npm run test | node index.js
 
-2. 查看数据库状态 - http://localhost/phpmyadmin/sql.php?server=1&db=rap2_delos_app_local&table=demousers&pos=0
+2. 查看数据库状态
+
+- phpmyadmin 界面 - http://localhost/phpmyadmin/sql.php?server=1&db=rap2_delos_app_local&table=demousers&pos=0
 
 - rap2_delos_app_local
+
+```bash
+# sql操作数据表结构
+$ ssh root@172.16.150.246
+$ mysql # 进入mysql 终端命令行
+
+mysql> show databases;
+mysql> use rap2_delos_app_local;
+# Error: Cannot delete or update a parent row: a foreign key constraint fails
+# 解决方式：不检查外链，设置FOREIGN_KEY_CHECKS变量：
+mysql> SET FOREIGN_KEY_CHECKS = 0;
+mysql> DROP TABLE IF EXISTS `demo_users`;
+# 删除完成后恢复设置
+mysql> SET FOREIGN_KEY_CHECKS = 1;
+mysql> exit;
+
+```
 
 
 ## 前、后端ORM概念区分（object relational mapping）

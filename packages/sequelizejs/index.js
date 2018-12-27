@@ -19,20 +19,29 @@ const sequelize = new Sequelize('rap2_delos_app_local', 'fe', 'fe@100153', {
   // }
 });
 
-/* 在模型关系配置好了以后，才执行下面的映射操作： */
-// User.drop()
-// Account.drop()
+sequelize.authenticate().then(async () => {
+  console.log('Connection has been established successfully.')
+  // require('./model/user')(sequelize)
+  // sequelize.import(__dirname + "/Team") ，将同时传入两个参数（sequelize, DataTypes）
 
-// User.sync({force: true})
-// Account.sync({force: true})
+  /* 在模型关系配置好了以后，才执行下面的映射操作： */
 
-async function demoHandler() {
-  const Team = sequelize.import(__dirname + "/Team")
-  const teamName = '名称-10个字符以内'
-  // await Team.sync();
-  return Team.create({
-    teamName
-  }).catch(err => console.error(err))
-}
+  /* 删除,清理数据库 */
+  const DemoModelDeleted = sequelize.define('test_create_demo_index', {
+    memberId: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      unique: true
+    },
+  });
+  await DemoModelDeleted.drop()
+  // await DemoModelDeleted.sync({force: true})
 
-demoHandler()
+  /* 执行演示模块 */
+  // await require('./hasMany')(sequelize)
+
+  process.exit(0)
+})
+.catch(err => {
+  console.error('Unable to connect to the database:', err);
+});
