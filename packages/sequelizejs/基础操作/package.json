@@ -1,0 +1,25 @@
+{
+  "name": "sequelizejs",
+  "version": "1.0.0",
+  "description": "Test sequelizejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://demo.com"
+  },
+  "keywords": [
+    "noop"
+  ],
+  "author": "galaxyw",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "1.6.4",
+    "sequelize": "latest"
+  },
+  "devDependencies": {
+    "co": "^4.6.0"
+  }
+}
