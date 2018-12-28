@@ -41,27 +41,31 @@ const db = new Sequelize({
   // modelPaths: [__dirname + '/models']
 });
 // db.addModels([Animal, Dog, Bird]);
-db.addModels([path.resolve(__dirname, `./models/`)]);
+// db.addModels([path.resolve(__dirname, `./models/`)]);
 
 (async () => {
   try {
-    /*
-    const animalList = await Animal.getList()
-    const dogList = await Dog.getList<Dog>()
+    await db.addModels([path.resolve(__dirname, `./models/`)]);
+    db.sync().then(() => {
+      /*
+      const animalList = await Animal.getList()
+      const dogList = await Dog.getList<Dog>()
 
-    console.log(animalList)
-    console.log(dogList)
-    */
+      console.log(animalList)
+      console.log(dogList)
+      */
 
-    // [ts] 类型“Animal”上不存在属性“leg”。
-    // console.log(dogList[0].leg)
+      // [ts] 类型“Animal”上不存在属性“leg”。
+      // console.log(dogList[0].leg)
 
-    const animal = Animal.create<Animal>({
-      name: 'Monkey',
-      weight: 19,
-    });
+      const animal = Animal.create<Animal>({
+        name: 'Monkey',
+        weight: 19,
+      });
 
-    process.exit(0)
+      process.exit(0)
+    })
+    
   } catch (e) {
     console.error(e)
   }
