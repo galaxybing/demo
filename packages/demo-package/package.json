@@ -1,0 +1,17 @@
+{
+  "name": "demo-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^15.6.1"
+  },
+  "@317huDependencies": {
+    "@317hu/rangedatepicker": "^1.0.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

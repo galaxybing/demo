@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../bower_components/jquery/dist/jquery.js" type="text/javascript" language="javascript"></script>
+        <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+        <script src="../js/jquery.printarea.js" type="text/JavaScript" language="javascript"></script>
+
+        <link type="text/css" rel="stylesheet" href="../bower_components/jquery-ui/themes/base/all.css" />
+
+        <link type="text/css" rel="stylesheet" href="../css/jquery.printarea.css" />                <!-- Y : rel is stylesheet and media is in [all,print,empty,undefined] -->
+        <link type="text/css" rel="stylesheet" href="media_all.css"  media="all" />   <!-- Y : rel is stylesheet and media is in [all,print,empty,undefined] -->
+        <link type="text/css" rel=""           href="empty.css" />                    <!-- N : rel is not stylesheet -->
+        <link type="text/css" rel="noPrint"    href="noPrint.css" />                  <!-- N : rel is not stylesheet -->
+        <link type="text/css" rel="stylesheet" href="media_none.css" media="xyz" />   <!-- N : media not in [all,print,empty,undefined] -->
+        <link type="text/css"                  href="no_rel.css"     media="print" /> <!-- N : no rel attribute -->
+        <link type="text/css"                  href="no_rel_no_media.css"          /> <!-- N : no rel, no media attributes -->
+    </head>
+<body>
+  <div style="border: solid 2px #999fff; padding: 5px; margin-bottom: 5px;">
+    <iframe width="100%" height="1008px" src="http://7xtqgc.com1.z0.glb.clouddn.com/FlSMfcu6hC9BtLCA8JwRpq5C9cIx"></iframe>
+    <script type="text/javascript">
+      // window.print();
+    </script>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+
+        var dialog = $("div.testDialog").dialog({position : { my : "left top", at : "left bottom+50", of : ".SettingsBox" }, width: "600", title: "Print Dialog Box Contents"});
+
+
+
+        var mode = $("input[name='mode']:checked").val();
+        var close = mode == "popup" && $("input#closePop").is(":checked");
+        var extraCss = $("input[name='extraCss']").val();
+
+        var print = "";
+        $("input.selPA:checked").each(function(){
+            print += (print.length > 0 ? "," : "") + "div.PrintArea." + $(this).val();
+        });
+
+        var keepAttr = [];
+        $(".chkAttr").each(function(){
+            if ($(this).is(":checked") == false )
+                return;
+
+            keepAttr.push( $(this).val() );
+        });
+
+        var headElements = $("input#addElements").is(":checked") ? '<meta charset="utf-8" />,<meta http-equiv="X-UA-Compatible" content="IE=edge"/>' : '';
+
+        var options = { mode : mode, popClose : close, extraCss : extraCss, retainAttr : keepAttr, extraHead : headElements };
+
+        $( print ).printArea( options );
+        
+    });
+
+  </script>
+</body>
+</html>

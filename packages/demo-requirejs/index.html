@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>require</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+    <script type="text/javascript" src="./require.js"></script>
+    <script type="text/javascript">
+        require.config({
+            shim: {
+                'main1': {
+                    deps: ['main2']
+                }
+            }
+        });
+        require(['main'], function(main) {
+            console.log(main.num);
+        });
+    </script>
+    </script>
+</body>
+
+</html>

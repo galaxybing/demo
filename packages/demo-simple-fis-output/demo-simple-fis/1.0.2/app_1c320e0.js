@@ -1,0 +1,1 @@
+function testAqalert(){alert("galaxyw bing xin.")}function experiencefree(){var e=navigator.userAgent,n=(navigator.userAgent.toLowerCase(),e.indexOf("Android")>-1||e.indexOf("Adr")>-1,!!e.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/));n&&testAqalert()}alert("Hello, World"),$(document).on("touchend","#btnDemo",function(){experiencefree()});

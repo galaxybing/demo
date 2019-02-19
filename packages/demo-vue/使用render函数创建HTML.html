@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="章鱼活动" name="keywords">
+    <meta name="Description" content="章鱼活动系统">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script type="text/javascript" src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body>
+    <div id="list-demo">
+        <anchored-heading :level="1">Hello world!</anchored-heading>
+        <anchored-heading :level="2">Hello world!</anchored-heading>
+        <anchored-heading :level="3">Hello world!</anchored-heading>
+        <anchored-heading :level="4">Hello world!</anchored-heading>
+        <anchored-heading :level="5">Hello world! abc</anchored-heading>
+        <anchored-heading :level="6">Hello world!</anchored-heading>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#list-demo',
+            data: {
+                //nextNum: 10
+            },
+            components: { // 组件局部注册：通过使用组件实例选项注册，可以使组件仅在另一个实例/组件的作用域中可用
+                'anchored-heading': {
+                    render: function(createElement) {
+                        return createElement(
+                            'h' + this.level, // tag name 标签名称
+                            this.$slots.default // vm.$slots.default 属性包括了所有没有被包含在具名 slot 中的节点
+                                                // 在使用 render 函数书写一个组件时，访问 vm.$slots 最有帮助
+                        )
+                    },
+                    props: {
+                        level: {
+                            type: Number,
+                            required: true
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+# 终端命令：
+
+# docker container run \
+#   -d \
+#   --rm \
+#   --name wordpressdb \
+#   --env MYSQL_ROOT_PASSWORD=100153 \
+#   --env MYSQL_DATABASE=wordpress \
+#   mysql:5.7
+  
+# docker container run \
+#   -d \
+#   -p 127.0.0.1:8081:80 \
+#   --rm \
+#   --name wordpressWeb \
+#   --env WORDPRESS_DB_PASSWORD=100153 \
+#   --link wordpressdb:mysql \
+#   --volume "$PWD/demo-wordpress":/var/www/html \
+#   wordpress
+
+
+# YAML配置
+# 
+# $ docker-compose up
+# $ docker-compose up -d
+# $ docker-compose stop
+# $ docker-compose rm 
+
+# MySQL Connection Error: (2002) php_network_getaddresses: getaddrinfo failed: Name or service not known
+# 所以，wordpressdb 必须为 mysql 
+mysql: # ？？wordpressdb
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=100153
+      - MYSQL_DATABASE=wordpress
+wordpressWeb:
+    image: wordpress
+    links:
+      - mysql # ？？wordpressdb
+    environment:
+      - WORDPRESS_DB_PASSWORD=100153
+    ports:
+      - "127.0.0.1:8081:80"
+    working_dir: /var/www/html
+    volumes:
+      - ./demo-wordpress:/var/www/html # demo-wordpress的目录映射，需要带上 / 斜杠才能表示出目录

@@ -1,0 +1,26 @@
+{
+  "name": "demo-shell",
+  "version": "1.0.0",
+  "description": "测试.sh 脚本执行 理解 awk grep命令工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./index.js --presets es2015,stage-2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-import": "1.0.1",
+    "babel-plugin-react-display-name": "2.0.0",
+    "babel-polyfill": "^6.9.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-react-hmre": "1.1.1",
+    "babel-preset-stage-1": "6.13.0",
+    "babel-preset-stage-2": "6.13.0",
+    "babel-register": "^6.14.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

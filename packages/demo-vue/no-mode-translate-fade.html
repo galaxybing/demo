@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="章鱼活动" name="keywords">
+    <meta name="Description" content="章鱼活动系统">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script type="text/javascript" src="https://unpkg.com/vue@2.2.1/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <style type="text/css">
+        .no-mode-translate-demo-wrapper {
+            position: relative;
+            height: 18px;
+        }
+
+        .no-mode-translate-demo-wrapper button {
+            position: absolute;
+        }
+
+        .no-mode-translate-fade-enter-active,
+        .no-mode-translate-fade-leave-active {
+            transition: all 1s;
+        }
+
+        .no-mode-translate-fade-enter,
+        .no-mode-translate-fade-leave-active {
+            opacity: 0;
+        }
+
+        .no-mode-translate-fade-enter {
+            transform: translateX(31px);
+        }
+
+        .no-mode-translate-fade-leave-active {
+            transform: translateX(-31px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="no-mode-translate-demo" class="demo">
+        <div class="no-mode-translate-demo-wrapper">
+            <transition name="no-mode-translate-fade">
+                <button v-if="on" key="on" @click="on = false">
+                    on
+                </button>
+                <button v-else="" key="off" @click="on = true">
+                    off
+                </button>
+            </transition>
+        </div>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#no-mode-translate-demo',
+            data: {
+                on: false
+            }
+        })
+    </script>
+</body>
+
+</html>

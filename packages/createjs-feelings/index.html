@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Tencent-TGideas">
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="Copyright" content="Copyright (c) 2006-2015 TENCENT" />
+<meta name="Description" content="UP2016-腾讯互动娱乐年度发布会" />
+<meta name="Keywords" content="致另一个“无用”的我,邀请函,UP2016,腾讯互动娱乐年度发布会,腾讯游戏,年度发布会,腾讯游戏新品发布会" />
+<title>致另一个“无用”的我</title>
+<style>
+    html, body { margin:0; padding:0; text-align: center; background-color:#000000;width:100%;height:100%;}
+    p{margin:0;}
+    *{margin:0; padding:0;border:0;}
+</style>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="./scripts/js/libs/zepto-1.2.0.min.js"></script>
+</head>
+<body>
+<canvas id="canvasStage" width="640" height="1136" style="background-color:#000000;"></canvas>
+
+<script src="cjs/libs/preloadjs-0.6.2_add_item_path.min.js"></script>
+<!-- 该修改是针对 Main.js 里面的
+    Core.OFFICIALPATH = './assets/';
+    Config.path=Core.OFFICIALPATH;
+ -->
+
+<script>
+    /*
+    //var phoneWidth = parseInt(window.screen.width);
+
+    var phoneWidth = parseInt(document.body.clientWidth);
+    //alert('window.screen.width:'+window.screen.width+' '+phoneWidth);
+    var phoneScale = phoneWidth/640;
+    var ua = navigator.userAgent;
+
+    //#
+    if (/Android (\d+\.\d+)/.test(ua)){
+        var version = parseFloat(RegExp.$1);
+        // andriod 2.3
+        if(version>2.3){
+            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            // andriod 2.3以上
+        }else{
+            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+        }
+        // 其他系统
+    } else {
+        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+    */
+    var timetamp= (new Date()).getTime();
+    loadCore();
+    function loadCore()
+    {
+        var loader=new createjs.LoadQueue(false);
+        loader.addEventListener('complete',handleComplete);
+        loader.loadFile({src:'cjs/libs/easeljs_0.8.2-tween-sound.js'});
+        loader.loadFile({src:'cjs/com/Config.js?v='+timetamp});
+        loader.loadFile({src:'cjs/com/Core.js?v='+timetamp});
+        loader.loadFile({src:'cjs/src/Main.js?v='+timetamp});
+    }
+    function handleComplete(e)
+    {
+        cjsStart();
+    }
+    function divLoadProgress(pro) {}
+    function divLoadComplete() {}
+
+    function goHome()
+    {
+        alert('goHome')
+    }
+    /*
+    * arg:page0 page1 page2 page3 page4 page5 share
+    * */
+    function sendClick(arg)
+    {// 用户操作的流量统计监听
+        //alert('sendClick:'+arg);
+        console.log('sendClick:'+arg);
+        //pgvSendClick({hottag:'up.a20160328feelings.relay.'+arg});
+    }
+
+</script>
+
+</body>
+</html>
