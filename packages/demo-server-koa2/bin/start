@@ -1,0 +1,8 @@
+#!/usr/bin/env node 
+
+var app = require('../server/app-koa-router.js');
+
+app
+  // .use(r.routes())
+  // .use(r.allowedMethods())
+  .listen(3001);

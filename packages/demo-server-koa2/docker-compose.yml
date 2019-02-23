@@ -1,0 +1,15 @@
+# 关于 docker-compose 工具使用的配置示例：
+# 
+version: "0.0.1"
+services:
+  node:
+    image: "node:8.12"
+    user: "node"
+    working_dir: /server-app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/server-app
+    expose:
+      - "3001"
+    command: "npm install --registry=https://registry.npm.taobao.org && pm2 start pm2-app.json"

@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>伯仲前端</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/app.css">
+		<style type="text/css">
+		  .reveal h4{
+				text-transform: lowercase;
+			}
+			/*
+			 * 隐藏 - 4个方向键箭头标识
+			 *
+			.reveal .controls {
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.reveal .controls button.navigate-left {
+				width: 25%;
+				height: 100%;
+				top: 0;
+				border-width: 0;
+			}
+			.reveal .controls button.navigate-right {
+				width: 25%;
+				height: 100%;
+				left: auto;
+				right: 0;
+				top: 0;
+				border-width: 0;
+			}
+			.reveal .controls button.navigate-up {
+				width: 50%;
+				height: 50%;
+				left: 25%;
+				top: 0;
+				bottom: auto;
+			}
+			.reveal .controls button.navigate-down {
+				width: 50%;
+				height: 50%;
+				left: 25%;
+				top: auto;
+				bottom: 0;
+				border-width: 0;
+			}
+			*/
+		</style>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body class="paper-container">
+		<div class="reveal">
+			<div class="slides">
+				<section class="main-page" data-menu-title="封面">
+					<h2>{{ 前端代码审核原则 }}</h2>
+					<p style="margin-left: 550px;width: 200px;">2018/11/02</p>
+					<p style="margin-left: 550px;width: 200px;font-size: 18px;text-align: right;"></p>
+					<script type="text/template">
+						<img src="img/code.png" height="200" />
+					</script>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Beautiful is better than ugly.</h3>
+					</section>
+					<!-- <section>
+						<p class="pic-sprite"><img class="pic" src="./assets/什么是js.png" /></p>
+					</section> -->
+					<section>
+						<ul>
+							<li>美胜于丑陋（编写`美`的代码为目标）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Explicit is better than implicit.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>明了胜于晦涩（代码应当是明了的，命名规范，风格相似）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Simple is better than complex.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>简洁胜于复杂（代码应当是简洁的，不要有复杂的内部实现）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Complex is better than complicated.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>复杂胜于凌乱（如果复杂不可避免，那代码间也不能有难懂的关系，要保持接口简洁）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Flat is better than nested.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>扁平胜于嵌套（代码应当是扁平的，不能有太多的嵌套）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Sparse is better than dense.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>稀疏胜于密繁（代码应当是扁平的，不能有太多的嵌套）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Readability counts.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>可读性很重要（代码是可读的）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Special cases aren't special enough to break the rules.</h3>
+						<h3 style="text-transform: capitalize;">Although practicality beats purity.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>即便假借特例的实用性之名，也不可违背这些规则。</li>
+							<li>虽然，实践胜于理论。</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Errors should never pass silently.</h3>
+						<h3 style="text-transform: capitalize;">Unless explicitly silenced.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>不要放过一切错误，除非错误本身需要以忽略对待 (Sentry 的开发环境调试告警丢失？？捕获了，而不处理它。)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">In the face of ambiguity, refuse the temptation to guess.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>不确定性面前，我们应抵挡妄加猜测的引诱</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">There should be one-- and preferably only one --obvious way to do it.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>不确定性面前，我们应抵挡妄加猜测的引诱</li>
+							<li>应该有一种，也但愿只有这一种是显而易见的解决之道。</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Although that way may not be obvious at first unless you're Dutch.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>万事开头难，除非荷兰人（Guido）。 （航海时代的开拓者们，这里的 Dutch 也是指 Guido）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Now is better than never.</h3>
+						<h3 style="text-transform: capitalize;">Although never is often better than *right* now.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>做好过不做，而不假思索就动手还不如不做。</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">If the implementation is hard to explain, it's a bad idea.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>如果某个实现无法很好阐释，那么它肯定是一个糟糕的办法； （这里不仅指函数方法，也是产品需求！）</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">If the implementation is easy to explain, it may be a good idea.</h3>
+					</section>
+					<section>
+						<ul>
+							<li>如果某个实现很容易说清楚，那么它可能就是个不错的方案</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">Namespaces are one honking great idea -- let's do more of those!</h3>
+					</section>
+					<section>
+						<ul>
+							<li>命名空间是个绝妙的发明 —— 对此我们应多多益善！</li>
+						</ul>
+					</section>
+				</section>
+				
+				<section>
+					<p class="pic-sprite"><img class="pic" src="./assets/import-this.png" /></p>
+				</section>
+				<section>
+					<h3>&lt;/谢谢&gt;</h3>
+					<!-- <a href="https://www.cnblogs.com/fxjwind/archive/2011/07/05/2098643.html" target="_blank"></a> -->
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				mouseWheel: false,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				viewDistance: 2,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'node_modules/reveal.js-menu/menu.js' },
+					//{ src: 'reveal.js-plugins/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },				
+					//{ src: 'reveal.js-plugins/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+				],
+				menu:{
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true
+				},
+				keyboard: { 
+					82: function() { Recorder.toggleRecording(); },	// press 'r' to start/stop recording
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+  			}
+			});
+			
+			/*
+ 			 * Markdown语法链接通过新窗口:
+ 			 * [title](url) 改为 [title](url?_blank)
+			 */
+			Reveal.addEventListener( 'ready', function( event ) {
+				// event.currentSlide, event.indexh, event.indexv
+				var aTagArr = [].slice.apply(document.getElementsByTagName("a"));
+				
+				aTagArr.forEach(function (e, i) {
+					console.log('e.href %s', e.href);
+				  e.href.indexOf("_blank") > -1 ? e.target = "_blank" : null;
+				});
+			});
+			
+		</script>
+	</body>
+</html>
