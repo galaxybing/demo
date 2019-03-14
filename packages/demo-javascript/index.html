@@ -25,30 +25,24 @@
 <body class="app" data-app-id="11668" data-ad="true" free="0">
     <script type="text/javascript">
     (function(window, undefined) {
-        window.name = 'bing'; // 或者 使用 this.name
-        function MyObject(name, message) {
-          this.name = name.toString();
-          this.message = message.toString();
+        // 属性重命名
+        let o = {
+          a: 'foo',
+          b: 'bala'
         }
-        MyObject.prototype.getName = () => {
-          return this.name;
-        };
-        MyObject.prototype.getMessage = function() {
-          return this.message;
-        };
-        
-        var foo = new MyObject('galaxyw', 'hi, Good morning');
-        // console.log( foo.getName() );
-        // 
+        let { a: aliasNameA, b: aliasNameB } = o;
+        // console.log('aliasNameA>', aliasNameA)// -> foo
         
         
+        function f({ a, b = 0 } = { a: "" }) {
+          // ...
+          console.log('a->', a)
+        }
+        // ？？以下传参后执行后，a 的结果：
+        f({ a: "yes" }); // ok, default b = 0
+        f(); // ok, default to {a: ""}, which then defaults b = 0
+        f({}); // error, 'a' is required if you supply an argument
         
-      var url = "https://developer.mozilla.org/en-US/Web/JavaScript";
-      var parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);
-      //["https://developer.mozilla.org/en-US/Web/JavaScript", "https", "developer.mozilla.org", "en-US/Web/JavaScript", index: 0, input: "https://developer.mozilla.org/en-US/Web/JavaScript"]
-      // console.log(parsedURL);
-      var parsedURL2 = /^(https?)\:\/\/([^\/]+)(.*)$/.exec('https://developer.mozilla.org/en-US/Web/JavaScript');
-      console.log(parsedURL2)
     })(window);
 
     </script>

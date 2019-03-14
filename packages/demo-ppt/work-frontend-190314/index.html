@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>伯仲前端</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/app.css">
+		<style type="text/css">
+		  .reveal h4{
+				text-transform: lowercase;
+			}
+			/*
+			 * 隐藏 - 4个方向键箭头标识
+			 *
+			 */
+			.reveal .controls .navigate-up, .reveal .controls .navigate-up.enabled {
+				border: 0;
+			}
+			.reveal .controls {
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.reveal .controls button.navigate-left {
+				width: 25%;
+				height: 100%;
+				top: 0;
+				border-width: 0;
+			}
+			.reveal .controls button.navigate-right {
+				width: 25%;
+				height: 100%;
+				left: auto;
+				right: 0;
+				top: 0;
+				border-width: 0;
+			}
+			.reveal .controls button.navigate-up {
+				width: 50%;
+				height: 50%;
+				left: 25%;
+				top: 0;
+				bottom: auto;
+			}
+			.reveal .controls button.navigate-down {
+				width: 50%;
+				height: 50%;
+				left: 25%;
+				top: auto;
+				bottom: 0;
+				border-width: 0;
+			}
+			
+		</style>
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body class="paper-container">
+		<div class="reveal">
+			<div class="slides">
+				<section class="main-page" data-menu-title="封面">
+					<h2>{{ 研发制度说明 }}</h2>
+					<p style="margin-left: 550px;width: 200px;">2019/03/14</p>
+					<p style="margin-left: 550px;width: 200px;font-size: 18px;text-align: right;"></p>
+					<script type="text/template">
+						<img src="img/code.png" height="200" />
+					</script>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">部门业务范围</h3>
+					</section>
+					<section>
+						<ul>
+							<li>* 主干业务逻辑负责（手术刀）</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>* 通用业务代码共享</li>
+						</ul>
+					</section>
+					<section>
+					  <ul>
+						  <li>* 问题不由所属业务处理，而统一放在前端 review 处理</li>
+						</ul>
+					</section>
+					<section>
+					  <ul>
+						  <li>* 吃掉更多蛋糕... ...(Rocket\app\workflow)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<p class="pic-sprite"><img class="pic" src="http://noonteam.com/download/attachments/8749608/317%E6%8A%A4%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-%E4%B8%9A%E5%8A%A1%E8%8C%83%E5%9B%B4.png?version=6&amp;modificationDate=1552548313000&amp;api=v2" /></p>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">我们的目标</h3>
+					</section>
+					<section>
+					  <ul>
+						  <li>深度、共享、强交互体验？</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<p class="pic-sprite"><img class="pic" src="http://noonteam.com/download/attachments/8749587/%E7%A0%94%E5%8F%91%E5%88%B6%E5%BA%A6-%E8%84%91%E5%9B%BE.png?version=9&amp;modificationDate=1552550681000&amp;api=v2" /></p>
+				</section>
+				<section>
+					<section>
+						<h3 style="text-transform: capitalize;">两个疑问？</h3>
+					</section>
+				  <section>
+					  <ul>
+						  <li>你认为现在的工作量从哪里来？有什么觉得哪些不应该到你手上？</li>
+						</ul>
+					</section>
+					<section>
+					  <ul>
+						  <li>你想，同谁一起做项目会更舒服？</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h3>&lt;/谢谢&gt;</h3>
+					<!-- <a href="https://www.cnblogs.com/fxjwind/archive/2011/07/05/2098643.html" target="_blank"></a> -->
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				mouseWheel: false,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				viewDistance: 2,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'node_modules/reveal.js-menu/menu.js' },
+					//{ src: 'reveal.js-plugins/audio-slideshow/slideshow-recorder.js', condition: function( ) { return !!document.body.classList; } },				
+					//{ src: 'reveal.js-plugins/audio-slideshow/audio-slideshow.js', condition: function( ) { return !!document.body.classList; } },
+				],
+				menu:{
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true
+				},
+				keyboard: { 
+					82: function() { Recorder.toggleRecording(); },	// press 'r' to start/stop recording
+					90: function() { Recorder.downloadZip(); }, 	// press 'z' to download zip containing audio files
+					84: function() { Recorder.fetchTTS(); } 	// press 't' to fetch TTS audio files
+  			}
+			});
+			
+			/*
+ 			 * Markdown语法链接通过新窗口:
+ 			 * [title](url) 改为 [title](url?_blank)
+			 */
+			Reveal.addEventListener( 'ready', function( event ) {
+				// event.currentSlide, event.indexh, event.indexv
+				var aTagArr = [].slice.apply(document.getElementsByTagName("a"));
+				
+				aTagArr.forEach(function (e, i) {
+					console.log('e.href %s', e.href);
+				  e.href.indexOf("_blank") > -1 ? e.target = "_blank" : null;
+				});
+			});
+			
+		</script>
+	</body>
+</html>

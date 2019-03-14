@@ -1,0 +1,17 @@
+/*!
+ * reveal.js
+ * http://lab.hakim.se/reveal-js
+ * MIT licensed
+ *
+ * Copyright (C) 2017 Hakim El Hattab, http://hakim.se
+ */
+/*********************************************
+ * Paper STYLES
+ *********************************************/
+
+.paper-container .pic-sprite .pic{
+  border: 0;
+  background: rgba(255, 255, 255, 0);
+  margin: 0;
+}
+
