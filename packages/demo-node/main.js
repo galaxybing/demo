@@ -1,3 +1,11 @@
+/*
+ * 核心模块 fs 的方法使用示例：
+ *
+ * 读写文本文件
+ * fs.readFile
+ * fs.writeFileSync
+ */
+
 // var Foo = require('./demoRequestHandler');// 可以 node ./main.js；也可以通过 npm run ...
 // 
 // import Foo from "./demo";// 需要 babel-preset-es2015 插件应用，所以只能使用： npm run build
@@ -7,7 +15,6 @@
 var fs = require('fs');
 // var m = require('demo-npm-publish');
 // m.person(' galaxyw...')
-
 
 fs.readFile('./DataSource-interfaceParamResponseEntities.json', 'utf-8', function (err, data) {
   let DATA_SOURCE = JSON.parse(data).RECORDS;
